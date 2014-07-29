@@ -1,7 +1,7 @@
 # bookstore-mvc #
 
 An example of MarionetteJS MVC application.
-* Used libraries: *
+### Used libraries: ###
 
 - MarionetteJS / BackboneJS / UnderscoreJS
 - RequireJS
