@@ -1,0 +1,107 @@
+<div id="headerNavBar" class="navbar navbar-custom-header" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavBarCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-book"></span> Another Yet Book Store</a>
+    </div>
+    <div class="clearfix collapse navbar-collapse" id="headerNavBarCollapse">
+        {{#if user}}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="shopcart-toggle"><span class="glyphicon glyphicon-shopping-cart"></span> My shopcart</a></li>
+            <li><a href="#profile"><span class="glyphicon glyphicon-user"></span> {{user.username}}</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">User menu <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#wishlist">Something else here</a></li>
+                    <li><a href="#favbooks">Something else here</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#signout">Sign out</a></li>
+                </ul>
+            </li>
+        </ul>
+        {{else}}
+        <div class="navbar-right nav-actions unlogged">
+            <ul class="nav navbar-nav actions-in-navbar">
+                <li><a href="#" class="shopcart-toggle"><span class="glyphicon glyphicon-shopping-cart"></span> My shopcart</a></li>
+            </ul>
+            <button type="button" id="signInAction" data-toggle="modal" data-target="#signInModal" class="btn btn-default navbar-btn">Sign in</button>
+            <button type="button" id="signUpAction" data-toggle="modal" data-target="#signUpModal" class="btn btn-success navbar-btn">Sign up</button>
+        </div>
+        {{/if}}
+    </div>
+    <div class="shopcart-region hide">
+
+    </div>
+</div>
+{{#unless user}}
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-sign-in">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+            </div>
+            <div class="modal-body">
+                <form id="signInForm">
+                    <div class="form-group">
+                        <label for="signInForm_Login">Login / email</label>
+                        <input type="text" class="form-control" id="signInForm_Login" placeholder="Enter your login">
+                    </div>
+                    <div class="form-group">
+                        <label for="signInForm_Password">Password</label>
+                        <input type="password" class="form-control" id="signInForm_Password" placeholder="Enter password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="signInSubmit">Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="signUpModalLabel">Sign up</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <form id="signUpForm">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="signUpForm_Username">Username</label>
+                            <input type="text" class="form-control" id="signUpForm_Username" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpForm_Email">Email</label>
+                            <input type="text" class="form-control" id="signUpForm_Email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signUpForm_Password">Password</label>
+                            <input type="password" class="form-control" id="signUpForm_Password" placeholder="Enter password">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center register-avatar">
+                            <img class="img-rounded img-rounded" src="static/img/users/default.png" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="signUpSubmit">Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/unless}}

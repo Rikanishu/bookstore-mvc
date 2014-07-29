@@ -1,0 +1,29 @@
+<div class="book clearfix">
+    <div class="line cover text-center col-md-2">
+        <a href="#bookinfo/{{bookId}}">
+            <img src="{{cover.preview}}" class="img-responsive img-thumbnail" />
+        </a>
+    </div>
+    <div class="line info col-md-7">
+        <div class="author"><a class="inherit" href="#author/{{authorId }}">{{authorTitle}}</a></div>
+        <div class="title"><a class="inherit" href="#bookinfo/{{bookId}}">{{bookTitle}}</a></div>
+        <div class="publish-year">{{publishYear}}</div>
+        {{#if description}}
+            <div class="description">
+               {{description}}
+            </div>
+        {{/if}}
+    </div>
+    <div class="line price col-md-3">
+        <div class="price-value">{{price}}</div>
+        <div class="actions">
+            {{#unless isInShopcart}}
+                <button class="btn btn-danger action-add-to-shopcart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to shopcart</button>
+            {{else}}
+                <button class="btn btn-danger disabled"><span class="glyphicon glyphicon-ok-sign icon"></span> In shopcart</button>
+            {{/unless}}
+            <a href="#" class="btn action-open-book-info btn-link"><span class="glyphicon glyphicon-info-sign"></span>Open book info</a>
+            <a href="#" class="btn action-add-to-wish-list btn-link"><span class="glyphicon glyphicon glyphicon-heart"></span>Add to wish list</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<form class="form-inline search-form" role="search">
+    <div class="custom-form-legend">Search</div>
+    <div class="row">
+        <div class="col-md-8 field-col">
+            <input type="text" id="searchGlobalText" class="form-control" value="{{globalSearch}}" placeholder="Search"/>
+        </div>
+        <div class="col-md-4 field-col">
+            <button type="submit" id="searchGlobalButton" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
+        </div>
+    </div>
+</form>
+<form id="filterForm">
+    <div class="custom-form-legend">Filter</div>
+    <div class="form-group">
+        <label for="authorFilter">Author name</label>
+        <input type="text" name="authorName" class="form-control" id="authorFilter" value="{{author}}" placeholder="Enter author name">
+    </div>
+    <div class="form-group">
+        <label for="bookTitleFilter">Book title</label>
+        <input type="text" name="bookTitle" class="form-control" id="bookTitleFilter" value="{{bookTitle}}" placeholder="Enter book title">
+    </div>
+    <div class="form-group">
+        <label for="publishYearFilter">Publish year</label>
+        <p>Also working with date ranges, <br/><small>e.g: 1972-2006</small></p>
+        <input type="text" name="publishYear" class="form-control" id="publishYearFilter" value="{{publishYear}}" placeholder="Enter publish year">
+    </div>
+    <button type="submit" id="submitFilterAction" class="btn btn-info">Filter books</button>
+    <button type="submit" id="clearFilterAction" class="btn btn-default"> Clear filters</button>
+</form>

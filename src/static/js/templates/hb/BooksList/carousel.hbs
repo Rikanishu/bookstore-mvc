@@ -1,0 +1,29 @@
+<div id="carousel-central-block" class="carousel slide">
+    <ol class="carousel-indicators">
+        {{#each items}}
+            <li data-target="#carousel-central-block" data-slide-to="{{@index}}" {{#is @index 0}} class="active" {{/is}}></li>
+        {{/each}}
+    </ol>
+
+    <div class="carousel-inner">
+        {{#each items}}
+
+            <a href="#bookinfo/{{bookId}}" class="item  {{#is @index 0}} active {{/is}}">
+                <div class="cover-layout">
+                 <img src="{{starred.cover}}" alt="Book Cover">
+                </div>
+                <div class="carousel-caption">
+                <h3>{{bookTitle}}</h3>
+                <p>by {{authorTitle}}</p>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+
+    <a class="left carousel-control" href="#carousel-central-block" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-central-block" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>

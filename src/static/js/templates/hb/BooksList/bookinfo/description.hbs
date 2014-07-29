@@ -1,0 +1,18 @@
+<div class="author desc-field"><a class="inherit" href="#author/{{authorId}}">{{authorTitle}}</a></div>
+<div class="title desc-field">{{bookTitle}}</div>
+<div class="publish-year desc-field">{{publishYear}}</div>
+{{#if description}}
+    <div class="description">
+        {{description}}
+    </div>
+{{/if}}
+<div class="book-tickets clearfix">
+    <div class="col-md-6 col-md-offset-6 price-info input-append text-right">
+        <div class="price">{{price}}</div>
+        {{#unless isInShopcart}}
+            <button class="btn btn-danger action-add-to-shopcart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to shopcart</button>
+        {{else}}
+            <button class="btn btn-danger disabled"><span class="glyphicon glyphicon-ok-sign icon"></span> In shopcart</button>
+        {{/unless}}
+    </div>
+</div>
