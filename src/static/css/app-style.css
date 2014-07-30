@@ -71,7 +71,6 @@ a.inherit {
     background: #fff;
     padding: 10px;
     border-radius: 10px;
-    min-width: 280px;
 }
 
 .filters-region .custom-form-legend {
@@ -495,3 +494,10 @@ i.star-3qtr {
     margin-right: 4px;
 }
 
+#searchGlobalText {
+    width: 65%;
+}
+
+#searchGlobalButton {
+    width: 30%;
+}
